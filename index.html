@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <!--
-    Owner      : Kaviyarasan (Kavin)
-    Profession : Full Stack Developer
-    GitHub     : https://github.com/kaviyarasan-1997
+    Owner : Kaviyarasan (Kavin)
+    Role  : Full Stack Developer
+    GitHub: https://github.com/kaviyarasan-1997
   -->
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kaviyarasan | Full Stack Developer</title>
 
-  <meta name="description" content="Kaviyarasan (Kavin) - Full Stack Developer from Tamil Nadu, India">
-  <meta name="author" content="Kaviyarasan">
-
-  <!-- ION ICONS -->
+  <!-- ICONS -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
   <style>
     :root {
-      --bg-main: #0b1320;
-      --bg-card: #121c2e;
+      --bg-main: #0a1220;
+      --bg-panel: #0f1c33;
+      --bg-card: #141f3a;
       --accent: #1f6feb;
-      --accent-soft: #2b3f6b;
       --text-main: #e6edf3;
       --text-muted: #9aa4b2;
     }
@@ -36,89 +34,111 @@
     }
 
     body {
-      background: linear-gradient(135deg, #0b1320, #0f1c33);
+      background: linear-gradient(135deg, #0a1220, #0e1b34);
       color: var(--text-main);
+      min-height: 100vh;
     }
 
-    header {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      color: var(--accent);
-    }
-
-    header p {
-      color: var(--text-muted);
-      margin-top: 10px;
-    }
-
-    nav {
+    /* ===== LAYOUT ===== */
+    main {
       display: flex;
-      justify-content: center;
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
       gap: 20px;
-      margin-top: 25px;
-      flex-wrap: wrap;
     }
 
-    nav a {
+    aside {
+      width: 260px;
+      background: var(--bg-panel);
+      border-radius: 18px;
+      padding: 25px;
+      height: fit-content;
+    }
+
+    aside h1 {
+      color: var(--accent);
+      font-size: 1.6rem;
+    }
+
+    aside p {
+      color: var(--text-muted);
+      margin: 8px 0 20px;
+    }
+
+    aside nav a {
+      display: block;
       color: var(--text-main);
       text-decoration: none;
-      padding: 8px 14px;
-      border-radius: 6px;
-      transition: 0.3s;
+      padding: 10px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      transition: .3s;
     }
 
-    nav a:hover {
-      background: var(--accent-soft);
+    aside nav a:hover,
+    aside nav a.active {
+      background: var(--accent);
     }
 
-    section {
-      max-width: 1100px;
-      margin: auto;
-      padding: 60px 20px;
+    /* ===== CONTENT ===== */
+    .content {
+      flex: 1;
+      background: var(--bg-panel);
+      border-radius: 18px;
+      padding: 30px;
+    }
+
+    article {
+      display: none;
+      animation: fade .4s ease;
+    }
+
+    article.active {
+      display: block;
+    }
+
+    @keyframes fade {
+      from {opacity: 0; transform: translateY(10px);}
+      to {opacity: 1; transform: translateY(0);}
     }
 
     h2 {
-      margin-bottom: 20px;
       color: var(--accent);
+      margin-bottom: 20px;
     }
 
     .card {
       background: var(--bg-card);
-      padding: 25px;
+      padding: 20px;
       border-radius: 14px;
-      margin-bottom: 25px;
-      box-shadow: 0 0 30px rgba(0,0,0,0.4);
+      margin-bottom: 20px;
     }
 
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
     }
 
-    /* CONTACT */
-    .contact-form input,
-    .contact-form textarea {
+    /* ===== CONTACT ===== */
+    input, textarea {
       width: 100%;
       padding: 12px;
-      margin-bottom: 15px;
       border-radius: 8px;
       border: none;
       outline: none;
-      background: #0f1c33;
+      margin-bottom: 12px;
+      background: #0c162d;
       color: #fff;
     }
 
-    .contact-form button {
+    button {
       background: var(--accent);
-      border: none;
-      padding: 12px 20px;
-      border-radius: 8px;
       color: #fff;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 8px;
       cursor: pointer;
       display: flex;
       align-items: center;
@@ -127,109 +147,129 @@
 
     iframe {
       width: 100%;
-      height: 300px;
-      border-radius: 12px;
+      height: 280px;
       border: none;
+      border-radius: 12px;
     }
 
     footer {
       text-align: center;
-      padding: 30px;
-      background: #060b14;
+      padding: 25px;
       color: var(--text-muted);
     }
 
-    footer a {
-      color: var(--accent);
-      text-decoration: none;
+    @media (max-width: 900px) {
+      main {
+        flex-direction: column;
+      }
+      aside {
+        width: 100%;
+      }
     }
   </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Kaviyarasan (Kavin)</h1>
-  <p>Full Stack Developer • Web • Android • AI</p>
+<main>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <!-- ===== SIDEBAR ===== -->
+  <aside>
+    <h1>Kaviyarasan</h1>
+    <p>Full Stack Developer</p>
 
-<section id="about">
-  <h2>About Me</h2>
-  <div class="card">
-    I am Kaviyarasan, also known as Kavin, a Full Stack Developer from Tamil Nadu.
-    I build modern, efficient and scalable web & mobile applications.
+    <nav>
+      <a href="#" class="active" data-nav="about">About</a>
+      <a href="#" data-nav="services">Services</a>
+      <a href="#" data-nav="projects">Projects</a>
+      <a href="#" data-nav="contact">Contact</a>
+    </nav>
+  </aside>
+
+  <!-- ===== CONTENT ===== -->
+  <div class="content">
+
+    <article class="active" data-page="about">
+      <h2>About Me</h2>
+      <div class="card">
+        I am <b>Kaviyarasan (Kavin)</b>, a Full Stack Developer from Tamil Nadu.
+        I create efficient, scalable and modern web & mobile applications.
+      </div>
+    </article>
+
+    <article data-page="services">
+      <h2>Services</h2>
+      <div class="grid">
+        <div class="card">🌐 Web Development</div>
+        <div class="card">📱 Android Apps</div>
+        <div class="card">🤖 AI Automation</div>
+        <div class="card">📊 Digital Systems</div>
+      </div>
+    </article>
+
+    <article data-page="projects">
+      <h2>My Works</h2>
+
+      <div class="card">
+        <h3>Committee Donation Website</h3>
+        <p>Donation tracking system with daily calculations.</p>
+        <a href="https://github.com/kaviyarasan-1997" target="_blank">GitHub</a>
+      </div>
+
+      <div class="card">
+        <h3>QR Payment & ID Generator</h3>
+        <p>QR based payment & ID generation system.</p>
+        <a href="https://github.com/kaviyarasan-1997" target="_blank">GitHub</a>
+      </div>
+    </article>
+
+    <article data-page="contact">
+      <h2>Contact</h2>
+
+      <div class="card">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31307.99818829923!2d79.7207784722483!3d11.224598983933587"></iframe>
+      </div>
+
+      <div class="card">
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="be2fa41f-7331-4cbe-b60e-311452aa8fe4">
+          <input type="text" name="fullname" placeholder="Full Name" required>
+          <input type="email" name="email" placeholder="Email" required>
+          <textarea name="message" placeholder="Message" required></textarea>
+          <button type="submit">
+            <ion-icon name="paper-plane-outline"></ion-icon>
+            Send
+          </button>
+        </form>
+      </div>
+    </article>
+
   </div>
-</section>
 
-<section id="services">
-  <h2>What I Do</h2>
-  <div class="grid">
-    <div class="card">🌐 Web Development</div>
-    <div class="card">📱 Android App Development</div>
-    <div class="card">🤖 AI & Automation</div>
-    <div class="card">📊 Digital Solutions</div>
-  </div>
-</section>
-
-<section id="projects">
-  <h2>My Works</h2>
-
-  <div class="card">
-    <h3>Committee Donation Website</h3>
-    <p>Daily donation tracking & calculations.</p>
-    <a href="https://github.com/kaviyarasan-1997" target="_blank">GitHub</a>
-  </div>
-
-  <div class="card">
-    <h3>QR Payment & ID Generator</h3>
-    <p>QR based payment and ID generation system.</p>
-    <a href="https://github.com/kaviyarasan-1997" target="_blank">GitHub</a>
-  </div>
-
-  <div class="card">
-    <h3>Portfolio Website</h3>
-    <p>Dark themed responsive portfolio.</p>
-    <a href="https://github.com/kaviyarasan-1997/Portfolio" target="_blank">GitHub</a>
-  </div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-
-  <div class="card">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31307.99818829923!2d79.7207784722483!3d11.224598983933587">
-    </iframe>
-  </div>
-
-  <div class="card contact-form">
-    <form action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="be2fa41f-7331-4cbe-b60e-311452aa8fe4">
-
-      <input type="text" name="fullname" placeholder="Full Name" required>
-      <input type="email" name="email" placeholder="Email Address" required>
-      <textarea name="message" placeholder="Your Message" required></textarea>
-
-      <button type="submit">
-        <ion-icon name="paper-plane-outline"></ion-icon>
-        Send Message
-      </button>
-    </form>
-  </div>
-</section>
+</main>
 
 <footer>
-  © 2026 Kaviyarasan (Kavin) • Hosted on GitHub Pages
+  © 2026 Kaviyarasan (Kavin) • GitHub Pages
 </footer>
 
-<!-- DIALOGFLOW CHATBOT -->
+<!-- ===== JS ===== -->
+<script>
+  const navLinks = document.querySelectorAll("[data-nav]");
+  const pages = document.querySelectorAll("article");
+
+  navLinks.forEach(link => {
+    link.onclick = () => {
+      navLinks.forEach(n => n.classList.remove("active"));
+      link.classList.add("active");
+
+      pages.forEach(p => {
+        p.classList.toggle("active", p.dataset.page === link.dataset.nav);
+      });
+    };
+  });
+</script>
+
+<!-- ===== CHATBOT ===== -->
 <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 <df-messenger
   intent="welcome"
@@ -240,12 +280,10 @@
 
 <style>
   df-messenger {
-    --df-messenger-bot-message: #e6edf3;
-    --df-messenger-button-titlebar-color: #1f2a44;
-    --df-messenger-chat-background-color: #0b1320;
-    --df-messenger-font-color: #ffffff;
+    --df-messenger-chat-background-color: #0a1220;
+    --df-messenger-button-titlebar-color: #1f6feb;
     --df-messenger-user-message: #1f6feb;
-    --df-messenger-send-icon: #1f6feb;
+    --df-messenger-bot-message: #e6edf3;
   }
 </style>
 
