@@ -12,7 +12,7 @@
   <canvas id="energyCanvas"></canvas>
 
   <div class="top-bar">
-    <div class="logo">Kavi.AI</div>
+    <div class="logo">Kaviyarasan</div>
     <div class="options-menu">
       <button class="dots-btn" id="menuBtn">
         <span></span><span></span><span></span>
@@ -77,13 +77,32 @@
     <div class="bot-header">
       <button id="closeBot" class="close-bot-btn">&times;</button>
     </div>
+    <!------bot----->
+ <div align="center" class="container">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     <df-messenger 
-      intent="welcome" 
-      chat-title="KAVI ASSIST" 
-      agent-id="3eeac8d2-881d-43f4-8732-d7d95954f839" 
-      language-code="en">
+     intent="welcome"  
+     chat-title="mozhihub localization" 
+     agent-id="6e15d48e-7e87-4dc9-8201-7e71e19d97ea" 
+     language-code="en" 
+     chat-icon="assets/images/img1.png"
+     chat-icon-size="80px">
+  <style>
+        df-messenger {
+          --df-messenger-bot-message: #fff;
+          --df-messenger-button-titlebar-color: #00A36C;
+          --df-messenger-button-titlebar-color:#00A36C;
+          --df-messenger-chat-background-color:#A9A9A9;
+          --df-messenger-font-color: #000;
+          --df-messenger-send-icon: #00adff;
+          --df-messenger-user-message: #9FE2BF;
+          --df-messenger-chip-border-color:#008000;
+          --df-messanger-chat-icon-size:140px;
+        }
+   </style>
+      
     </df-messenger>
-  </div>
+<!---End Bot---->
 
   <script src="etc/script.js"></script>
   <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
