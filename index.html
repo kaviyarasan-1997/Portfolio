@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>T. Kaviarasan | Portfolio</title>
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="dark-mode">
+
+    <!-- Background Audio & Interactive Canvas -->
+    <audio id="bgMusic" autoplay loop>
+        <source src="audio/master.mp3" type="audio/mp3">
+    </audio>
+    <canvas id="energyCanvas"></canvas>
+
+    <!-- Header & Navigation -->
+    <div class="contenedor-header">
+        <header>
+            <div class="logo">
+                <a href="#home">Kaviarasan<span>.</span></a>
+            </div>
+            
+            <nav id="nav">
+                <ul>
+                    <li><a href="#home" onclick="seleccionar()">HOME</a></li>
+                    <li><a href="#about" onclick="seleccionar()">ABOUT</a></li>
+                    <li><a href="#services" onclick="seleccionar()">SERVICES</a></li>
+                    <li><a href="#portfolio" onclick="seleccionar()">PORTFOLIO</a></li>
+                    <li><a href="#contact" onclick="seleccionar()">CONTACT</a></li>
+                </ul>
+            </nav>
+
+            <!-- Day/Night Sliding Switch Container -->
+            <div class="theme-switch-container">
+                <i class="fas fa-sun sun-icon"></i>
+                <label class="switch">
+                    <input type="checkbox" id="theme-slider" onchange="toggleTheme(this)">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-moon moon-icon"></i>
+            </div>
+
+            <!-- Hamburger Icon for Phone View -->
+            <div class="nav-responsive" onclick="mostrarOcultarMenu()">
+                <i class="fas fa-bars" id="menu-icon"></i>
+            </div>
+        </header>
+    </div>
+
+    <!-- Home Section -->
+    <section class="home" id="home">
+        <div class="image">
+            <img src="images/Dp.jpg" alt="Kaviarasan Profile">
+        </div>
+        <div class="content">
+            <span class="hello">Hello,</span>
+            <h3>I'M <span>T. Kaviarasan</span></h3>
+            <h2>M.Sc. | Full Stack Developer</h2>
+            <p>Passionate about building robust web applications, automated AI bots, and cinematic digital experiences. I create highly responsive business portals and portfolio infrastructures optimized for all devices.</p>
+            <a href="#about" class="btn">About Me</a>
+        </div>
+    </section>
+
+    <!-- About & Skills Section -->
+    <section class="about" id="about">
+        <h1 class="heading"> About <span>Me</span> </h1>
+        <div class="row">
+            
+            <!-- Timeline Cards -->
+            <div class="box">
+                <h3 class="title"><i class="fas fa-briefcase"></i> Experience & Education</h3>
+                <div class="exp-box">
+                    <h3>Full Stack Developer</h3>
+                    <span class="company">Smarty Chip | Present</span>
+                    <p>Managing complete software life-cycles, structuring server architectures, and designing front-end user dashboards.</p>
+                </div>
+                <div class="exp-box">
+                    <h3>Master of Science (M.Sc.)</h3>
+                    <span class="company">Computer Science Graduate</span>
+                    <p>Advanced computing, database engineering analytics, and application performance scaling paradigms.</p>
+                </div>
+            </div>
+
+            <!-- Custom Skills Block -->
+            <div class="box" id="skills">
+                <h3 class="title"><i class="fas fa-code"></i> Technical Power</h3>
+                
+                <div class="skill"><span>HTML & CSS</span><div class="barra-skill"><div class="progreso htmlcss"></div></div></div>
+                <div class="skill"><span>JavaScript (ES6+)</span><div class="barra-skill"><div class="progreso javascript"></div></div></div>
+                <div class="skill"><span>Firebase DB</span><div class="barra-skill"><div class="progreso firebase"></div></div></div>
+                <div class="skill"><span>GitHub / Deployment</span><div class="barra-skill"><div class="progreso github"></div></div></div>
+                <div class="skill"><span>UI/UX Interface Work</span><div class="barra-skill"><div class="progreso design"></div></div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h1 class="heading"> My <span>Services</span> </h1>
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-laptop-code"></i>
+                <h3>Web Applications</h3>
+                <p>Fully responsive, custom-coded web environments with fast delivery speeds.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-robot"></i>
+                <h3>Automation Bots</h3>
+                <p>Smart auto-reply bots built to simplify operations and elevate user engagement profiles.</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-paint-brush"></i>
+                <h3>Visual Layouts</h3>
+                <p>High-end cinematic designs, graphic presentation decks, and premium asset edits.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Filter System -->
+    <section class="portfolio" id="portfolio">
+        <h1 class="heading"> My <span>Portfolio</span> </h1>
+        
+        <div class="button-container">
+            <div class="btn filter-btn active" data-filter="all">All</div>
+            <div class="btn filter-btn" data-filter="code">Code</div>
+            <div class="btn filter-btn" data-filter="design">Design</div>
+            <div class="btn filter-btn" data-filter="bots">Bots</div>
+        </div>
+
+        <div class="image-container">
+            <div class="box code">
+                <img src="images/img1.jpg" alt="Project Hub">
+                <div class="info"><h3>Enterprise App</h3></div>
+            </div>
+            <div class="box design">
+                <img src="images/img2.jpg" alt="Asset System">
+                <div class="info"><h3>Cinematic UI Variant</h3></div>
+            </div>
+            <div class="box bots">
+                <img src="images/img3.jpg" alt="AI Agent">
+                <div class="info"><h3>Automated AI System</h3></div>
+            </div>
+            <div class="box code">
+                <img src="images/img4.jpg" alt="Firebase App">
+                <div class="info"><h3>Firebase Core Engine</h3></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact" id="contact">
+        <h1 class="heading"> Contact <span>Me</span> </h1>
+        <div class="box-container">
+            <div class="box">
+                <i class="fas fa-envelope"></i>
+                <h3>Email Connection</h3>
+                <p>infolite.in.org@gmail.com</p>
+            </div>
+            <div class="box">
+                <i class="fas fa-map-marker-alt"></i>
+                <h3>Current Station</h3>
+                <p>Mayiladuthurai, Tamil Nadu, India</p>
+            </div>
+        </div>
+
+        <div class="row">
+          
+<form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+    <!-- Web3Forms Access Key -->
+    <input type="hidden" name="access_key" value="5e51a205-46d1-4db6-916f-0703efb327ab">
+ 
+    <div class="inputBox">
+        <!-- 'name="name"' add panni iruken -->
+        <input type="text" name="name" placeholder="Name" required>
+        
+        <!-- 'name="email"' add panni iruken -->
+        <input type="email" name="email" placeholder="Email" required>
+    </div>
+    
+    <!-- 'name="subject"' add panni iruken -->
+    <input type="text" name="subject" placeholder="Subject">
+    
+    <!-- 'name="message"' add panni iruken -->
+    <textarea name="message" cols="30" rows="8" placeholder="Message Details" required></textarea>
+    
+    <button type="submit" class="btn">Send Dispatch <i class="fas fa-paper-plane"></i></button>
+</form>
+
+        </div>
+    </section>
+
+    <!-- Footer Space -->
+    <div class="footer">
+        Engineered by <span>T. Kaviarasan</span> | All Rights Reserved &copy; 2026
+    </div>
+
+    <!-- Chatbot Initialization -->
+    
+  <div id="bot-container" class="draggable-bot">
+    <div class="bot-header">
+      <button id="closeBot" class="close-bot-btn">&times;</button>
+    </div>
+<!------bot----->
+ <div align="center" class="container">
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+    <df-messenger 
+     intent="welcome"  
+     chat-title="mozhihub localization" 
+     agent-id="6e15d48e-7e87-4dc9-8201-7e71e19d97ea" 
+     language-code="en" 
+     chat-icon="assets/images/img1.png"
+     chat-icon-size="80px">
+  <style>
+        df-messenger {
+          --df-messenger-bot-message: #fff;
+          --df-messenger-button-titlebar-color: #00A36C;
+          --df-messenger-button-titlebar-color:#00A36C;
+          --df-messenger-chat-background-color:#A9A9A9;
+          --df-messenger-font-color: #000;
+          --df-messenger-send-icon: #00adff;
+          --df-messenger-user-message: #9FE2BF;
+          --df-messenger-chip-border-color:#008000;
+          --df-messanger-chat-icon-size:140px;
+        }
+   </style>
+      
+    </df-messenger>
+<!---End Bot---->
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
