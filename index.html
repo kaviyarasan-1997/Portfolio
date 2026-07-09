@@ -226,6 +226,18 @@
           --df-messenger-chip-border-color:#008000;
           --df-messanger-chat-icon-size:140px;
         }
+       {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          z-index: 9999;
+       }
+
+        /* Enforce Window Height */
+        df-messenger::part(chat-window) {
+          height: 500px !important;
+          max-height: 80vh !important;
+        }
    </style>
       
     </df-messenger>
